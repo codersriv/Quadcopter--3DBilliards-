@@ -10,10 +10,23 @@ public class PlayMove : NetworkBehaviour
     private Vector3 pVelocity;
     public float speed = 20f;
     public bool shoot;
+
+    public Camera ca;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        SphereCollider s = GetComponent<SphereCollider>();
+        if(!isLocalPlayer){
+            ca.gameObject.SetActive(false);
+            s.enabled = true;
+            controller.enabled = false;
+        }
+        else{
+            s.enabled = false;
+            // controller.enabled = false;
+        }
+
     }
 
     // Update is called once per frame

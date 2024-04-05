@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Mirror;
 
 
-public class PlayGun : MonoBehaviour
+public class PlayGun : NetworkBehaviour
 {
     private PlayMove _input;
     [SerializeField]

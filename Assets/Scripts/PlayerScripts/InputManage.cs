@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Mirror;
 public class InputManage : MonoBehaviour
 {
     private PlayInput playerInput;
@@ -28,7 +28,7 @@ public class InputManage : MonoBehaviour
         //motor.onShootPressed();
     }
     void LateUpdate(){
-        // look.ProcessLook(move.Look.ReadValue<Vector2>());
+        look.ProcessLook(move.Look.ReadValue<Vector2>());
     }
     private void OnEnable(){
         move.Enable();
